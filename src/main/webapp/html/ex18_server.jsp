@@ -17,7 +17,13 @@
 		//int a = 10;
 	
 		
-		String txtAge = request.getParameter("age");
+    	String txtAge = request.getParameter("age");
+    	String txt1 = request.getParameter("txt1");
+ 	%>
+ 
+ 	<p>나이: <%= txtAge %></p>
+ 	<p>txt1: <%= txt1 %></p>
+		
 
 	
 	%>
