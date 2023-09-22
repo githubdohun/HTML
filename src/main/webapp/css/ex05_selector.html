@@ -10,9 +10,18 @@
             color: blue;
         } */
 
-       ul > li > span {
+       /* ul > li > span {
             color:blue;
+        } */
+
+        ul span {
+            color: blue;
         }
+
+        body  b {
+            color: red;
+        }
+        
 
 
 
@@ -42,12 +51,13 @@
         - 부모 선택자 > 자식 선택자 {
             구현부;
         }
+        - 정밀도 높음 + 범위 좁음
 
         자손 선택자, Descendant Selector
         - 부모선택자 자식선택자 {
             구현부;
         }
-
+        - 정밀도 높음 + 범위 넓음
 
      -->
 
@@ -63,11 +73,13 @@
 
      <h2>공지 사항</h2>
 
-     <ul>
-        <li>구글 드라이브에 오후까지 <span>과제를 <b>제출하세요.</b></span></li>
-        <li>주말에 <span>복습하세요.</span></li>
-        <li>다음주 <b>추석 연휴입니다.</b></li>
-     </ul>
+     
+        <ul>
+            <li>구글 드라이브에 오후까지 <span>과제를 <b>제출</b>하세요.</span></li>
+            <li>주말에 <span>복습하세요.</span></li>
+            <li>다음주 <b>추석 연휴입니다.</b></li>
+        </ul>
+    
 
      <hr>
      <b>볼드체</b>
