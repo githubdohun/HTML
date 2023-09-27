@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #list .box {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            /* display: inline-block; */
+            /* font-size: 1rem; */
+
+            float: left;
+        }
+
+        #list::after { /* 클리어 공식 */
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        /* #list {
+            font-size: 0;
+        }
+         */
+    </style>
+</head>
+<body>
+    <!-- ex34_float.html -->
+
+    <!-- div#box$.box{상자$}*3 -->
+
+    <h1>컨텐츠</h1>
+
+    <div id="list">
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <!-- <div style="clear: both;"></div> -->
+    </div>
+
+    <h2>또 다른 내용</h2>
+
+
+</body>
+</html>

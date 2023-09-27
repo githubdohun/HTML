@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/b001d4dbad.js" crossorigin="anonymous"></script>
+    <style>
+
+        #box {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            margin: 50px;
+            padding: 5px;
+
+            /* 
+                모서리 둥글기
+                - border-radius
+                - px, %
+                - width,height 1 / 2 = 최댓값
+
+                https://fontawesome.com/
+            */
+
+            /* border-radius: 100px; */
+            /* border-radius: 50%; */
+
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+
+        #cat img {
+            /* border-radius: 15px; */
+            border-radius: 50%;
+
+        }
+
+        body {
+            margin-bottom: 500px;
+        }
+
+        #txt1 {
+            border-radius: 20px;
+            border: 1px solid #777;
+            outline: none;
+            /* padding-left: 10px; */
+            padding: 5px 10px;
+        }
+
+        #search {
+            width: 245px;
+        }
+
+        #search input {
+            float: left;
+            border: 1px solid #777;
+            color: #333;
+            padding: 5px;
+            outline: none;
+
+        }
+
+        #search input[type=text] {
+            border-right: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        #search input[type=button] {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        #search::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #icon {
+            /* 이미지(X), 폰트(O) 딩벳폰트 */
+            font-size: 3rem;
+            color: tomato;
+        }
+
+        #search2 {
+            width: 245px;
+        }
+
+        #search2 input, #search2 button {
+            float: left;
+            border: 1px solid #777;
+            color: #333;
+            padding: 5px;
+            outline: none;
+
+        }
+
+        #search2 input[type=text] {
+            border-right: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        #search2 button {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #search2::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #search2 button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex37_border.html -->
+    <div id="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam obcaecati ad, explicabo quae laborum nisi iure aperiam veritatis dolorem earum, tempora rem officia, dolore vel repudiandae vitae nemo sapiente. Veritatis!</div>
+
+    <hr>
+
+    <div id="cat">
+        <img src="../asset/images/cat01.jpg">
+        <img src="../asset/images/cat02.jpg">
+        <img src="../asset/images/cat03.jpg">
+        <img src="../asset/images/cat04.jpg">
+        <img src="../asset/images/cat05.jpg">
+    </div>
+
+    <hr>
+
+    <input type="text" id="txt1">
+
+    <hr>
+
+    <h1>검색</h1>
+
+    <div id="search">
+        <input type="text" placeholder="검색어를 업력하세요.">
+        <input type="button" value="Search">
+    </div>
+
+    <hr>
+
+    <div id="search2">
+        <input type="text" placeholder="검색어를 업력하세요.">
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+
+    <hr>
+
+    <!-- <i id="icon" class="fa-solid fa-magnifying-glass"></i> -->
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            background-color: orange;
+            width: 800px;
+            height: 100px;
+        }
+
+        #sub-menu {
+            background-color: gold;
+            width: 200px;
+            height: 500px;
+            float: left; 
+        }
+
+        #content {
+            background-color: cornflowerblue;
+            width: 600px;
+            height: 500px; 
+            float: left;
+        }
+
+        #footer {
+            background-color: greenyellow;
+            width: 800px;
+            height: 100px;
+            clear: left; /* float의 영향을 제거하기 위해 사용하는 속성, float와 같은 방향을 넣어야 한다. */
+        }
+
+        #main {
+            border: 10px solid black;
+            width: 800px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex25_float.html -->
+    <h1>페이지 레이아웃</h1>
+
+    <div id="main"> <!-- 자동 개행을 막기 위해 전체 묶기 -->
+    <div id="menu">주메뉴(orange)</div>
+    <div id="sub-menu">보조메뉴(yellow)</div>
+    <div id="content">콘텐츠(blue)</div>
+    <div id="footer">하단(green)</div>
+    </div>
+
+</body>
+</html>
