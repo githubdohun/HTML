@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex16_idcheck.html -->
+
+    <h1>아이디 중복검사</h1>
+
+    <form name="form1">
+        아이디: <input type="text" name="txtid" size="10">
+                <input type="button" value="검사하기">
+
+        <hr>
+        사용 가능한 아이디입니다.
+        <hr>
+
+        <input type="button" value="사용하기" id="btnuse">
+        <input type="button" value="창닫기" id="btnlose">
+
+    </form>
+
+    <script>
+
+        var btnuse = window.document.form1.btnuse;
+        var btnlose = window.document.form1.btnlose;
+        var txtid = window.document.form1.txtid;
+
+        btnuse.onclick = m1;
+        btnlose.onclick = m2;
+
+        //자식페이지에서 입력한 아이디를 부모페이지에 입력하게 하고 창닫기
+        function m1() {
+            opener.document.form2.txtid.value = txtid.value;
+            window.close();
+        }
+
+        function m2() {
+            window.close();
+        }
+
+
+    </script>
+
+</body>
+</html>

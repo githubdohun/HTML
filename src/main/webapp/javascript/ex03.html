@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        /* 스타일 태그는 아무곳이나 있어도 되지만 body 영역에 넣을 필요가 없어서 head부분에 있었던 거임 */
+    </style>
+
+    <script>
+        // script태그도 마찬가지, 태그가 여러개 있어도 괜찮지만 실행순서에 영향을 미칠 수 있음
+        // window.document.all.txt1.value =  new Date();
+    </script>
+
+</head>
+<body>
+    <!-- ex03.html -->
+
+    <!-- 
+        자바 스크립트 구문의 실행 순서
+        - 동기(문장 순서대로 실행): 위에서 아래로, 연산자 우선순위에 따라서 실행
+        
+
+        자바스크립트 디버깅
+        - 값 확인시 출력해서 확인
+            1. alert(값);       - 편법
+            2. console.log(값); - 정석
+    -->
+
+    <input type="text" name="txt1" size="50">
+    
+    <!-- 현재시간을 텍스트 박스에 추가 -->
+    <script>
+        
+        // alert(100);
+        // alert(new Date());
+
+        // 값은 브라우저에 뜨지않고 개발자도구 콘솔에 뜸
+        console.log(100);
+        console.log(new Date());
+        
+
+        window.document.all.txt1.value =  new Date();
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* CSS 영역 */
+    </style>
+
+    <!-- 2. 임베디드 방식 -->
+    <script>
+        // JavaScript 영역
+        alert('안녕');
+    </script>
+
+    <!-- 3. 외부 방식 -->
+    <script src="ex02.js"></script>
+</head>
+<body>
+    <!-- ex02.html -->
+
+    <!-- 
+        HTML을 JavaScript로 적용하는 방법(CSS와 유사함)
+
+        1. 인라인 방식(사용 안함) > 이벤트 핸들러(Event Handler) == 이벤트
+            - 태그에 직접 기재
+            - 모든(대부분) 태그 > onXXX 속성 제공
+
+        2. 임베디드 방식
+            - <script> 태그지원
+
+        3. 외부 방식
+            - *.js로 파일 분리
+            - 참조: <script> 태그 사용
+
+    -->
+
+    <!-- 1. 이벤트(인라인) 방식 -->
+    <input type="button" value="버튼" onclick="alert('클릭');">
+
+
+</body>
+</html>

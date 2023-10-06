@@ -1,0 +1,56 @@
+/* ex42.css */
+
+#main {
+    width: 596px;
+    margin: 20px auto;
+}
+
+#main #header {
+    font-size: 15px;
+    color: #444;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 12px;
+}
+
+#main #content .item {
+    padding: 20px 0;
+    border-bottom: 1px solid ;
+}
+
+#main #content .item::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#main #content .item img {
+    float: left;
+    width: 106;
+    height: 72;
+    margin-right: 15px;
+}
+
+#main #content .item img .txt {
+    float: left;
+    width: 460px;
+}
+
+#main #content .item .txt .title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+#main #content .item .txt .desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+#main #content .item .txt .pub {
+    font-size: 13px;
+    color: #888;
+}

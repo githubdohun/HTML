@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* border: 10px solid red; */
+            /* height: 100%; */
+        }
+        
+        body {
+            /* border: 10px solid blue; */
+            /* height: 100%; */
+        }
+
+        /* ----------------------------------------------------------------------------- */
+
+        main {
+            display: grid;
+            /* grid-template-rows: 50px 200px auto;
+            grid-template-columns: 200px auto; */
+            grid-template-rows: 50px 200px auto;
+            grid-template-columns: 200px minmax(800px, 1fr);
+            /* height: 100%; */
+            height: 100vh; /* viewport-height의 약자(브라우저) */
+        }
+
+        /* ----------------------------------------------------------------------------- */
+
+        #menu {
+            background-color: orange;
+            grid-row: 1/4;
+            text-align: center;
+        }
+
+        #menu > h1 {
+            color: white;
+        }
+
+        #menu > hr {
+            border: 0;
+            border-bottom: 1px dashed white;
+        }
+        
+        #menu > ul {
+            padding: 0;
+            color: white;
+        }
+
+        #menu > div {
+            color: white;
+            font-size: 14px;
+            padding: 20px;
+        }
+
+        /* ----------------------------------------------------------------------------- */
+
+        #search {
+            background-color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #search input[type=text] {
+            border: 1px solid yellow;
+            width: 430px;
+            padding: 5px;
+            outline: none;
+        }
+
+        #search button {
+            width: 100px;
+            height: 27.2px;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+
+        /* ----------------------------------------------------------------------------- */
+        
+        #banner {
+            background-color: greenyellow;
+        }
+        
+        #banner > img {
+            object-fit: cover; /* 배너 사이즈 변경 시 background-size처럼 contain, cover 가능 */
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        /* ----------------------------------------------------------------------------- */
+        
+        #list {
+            background-color: cornflowerblue;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #list > div {
+            background-color: yellowgreen;
+        }
+        
+        
+        #list > div > img {
+            display: block;
+            margin: 20px auto;
+            border: 3px solid white;
+            padding: 3px;
+        }
+        
+        #list > div > div {
+            margin: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        /* 스마트폰에서 태블릿 세로 크기가 될 때쯤 보이는 화면을 변경 */
+        @media screen and (max-width: 768px) {
+            
+            /* * { font-family: 궁서체;} */
+            
+            main {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 210px 50px 200px auto;
+                height: 100vh;
+            }
+            
+            /* ----------------------------------------------------------------------------- */
+            
+            #menu {
+                grid-row: auto; /* 메뉴 부분 밑 여백 지우기 */
+            }
+            
+            #menu ul {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+            
+            #menu li {
+                list-style-type: none;
+                margin: 0px 7px;
+            }
+
+            #menu hr {
+                display: none;
+            }
+            
+            /* ----------------------------------------------------------------------------- */
+
+            #list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ex52_grid.html -->
+    <main>
+        <div id="menu">
+            <h1>Study</h1>
+
+            <ul>
+                <li>Java</li>
+                <li>Oracle</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <hr>
+            
+            <ul>
+                <li>Class</li>
+                <li>Method</li>
+                <li>Interface</li>
+                <li>Property</li>
+                <li>Attribute</li>
+            </ul>
+
+            <hr>
+
+            <div>
+                &copy;Copyright test.com<br>
+                All rights reserved.
+            </div>
+        </div>
+        
+        <div id="search">
+            <input type="text">
+            <button>Search</button>
+        </div>
+
+        <div id="banner">
+            <img src="../asset/images/gimbal.jpg">
+        </div>
+
+        <div id="list">
+            <!-- (div>(img[src=../asset/images/rect_icon$$.png]+(div>lorem)))*6 -->
+            <div>
+                <img src="../asset/images/rect_icon01.png" alt="">
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus cum necessitatibus assumenda quod officia saepe labore ab. Quibusdam, magni commodi quas aspernatur inventore recusandae temporibus tenetur corrupti iure impedit!</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon02.png" alt="">
+                <div>Excepturi magnam, maxime placeat voluptates sed cum id harum, facere assumenda minima vero laborum quibusdam molestiae autem cumque, quia beatae dolor debitis nulla aperiam reiciendis nemo. Voluptas minima laboriosam vitae.</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon03.png" alt="">
+                <div>Incidunt blanditiis provident nesciunt adipisci quos magnam nihil laboriosam distinctio aspernatur repudiandae. Vero soluta veritatis qui! Autem, ut. Unde ab accusantium sapiente quo libero sequi. Illum quo vitae sunt incidunt?</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon04.png" alt="">
+                <div>Quasi dicta nam reiciendis odio ducimus quibusdam itaque architecto sit distinctio possimus. Quidem quae amet culpa, neque ipsa quis ullam tempora suscipit corporis, repellendus, dolor cumque quas veniam ex ducimus!</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon05.png" alt="">
+                <div>Incidunt repellat culpa, dignissimos delectus ipsa suscipit. Accusamus similique consequuntur debitis ullam consequatur fugit magnam laboriosam, incidunt nostrum beatae illo eum nemo dicta provident magni repellat atque mollitia voluptates voluptatum?</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon06.png" alt="">
+                <div>Accusamus assumenda exercitationem laboriosam animi et quos itaque, quisquam laborum ducimus atque explicabo nobis non? Accusamus temporibus rem ipsum voluptatum ducimus vero nulla. Temporibus earum rerum nesciunt suscipit, neque similique.</div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

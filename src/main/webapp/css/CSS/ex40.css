@@ -1,0 +1,10 @@
+/* ex40.css */
+
+html {
+    background-image: url(../../asset/images/gimbal.jpg);
+    background-repeat: no-repeat; /* 반복 금지 */
+    background-position: center center;
+
+    background-size: cover;
+    background-attachment: fixed;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex08_string.html -->
+
+    <script>
+        
+        //문자열 함수
+        var txt = 'Hello~ Hong~';
+
+        //1. 문자열 길이: .length
+        console.log(txt.length); //프로퍼티(Property)
+
+        //2. 검색: indexOf(), lastIndexOf()
+        console.log(txt.indexOf('~'));          //5
+        console.log(txt.indexOf('~', 6));       //11
+        console.log(txt.lastIndexOf('~'));      //11
+        console.log(txt.lastIndexOf('~', 10));  //5
+        
+        //3. 대소문자 변환: toUpperCase(), toLowerCase()
+        console.log(txt.toUpperCase());
+        console.log(txt.toLowerCase());
+
+        
+        //4. 추출: substring(), substr(), charAt(), charCodeAt()
+        txt = 'Hello~ Hong~';
+
+        console.log(txt.substring(2, 8));
+        console.log(txt.substring(2));
+        
+        console.log(txt.substr(2, 4));
+        console.log(txt.substr(2));
+        
+        console.log(txt.charAt(2)); //문자 한 글자 추출
+        console.log(txt.charCodeAt(2)); //문자 코드 값 추출
+        
+        //5. 치환: replace()
+        //- 처음 만나는 요소만 치환(반복X)
+        //- 정규 표현식을 사용(반복O) : /[0-9]/g - grobal(전역)의 약자
+        txt = 'Hello~ Hong~ Bye~ Hong~';
+
+        console.log(txt.replace('Hong', 'Lee')); //Hello~ Lee~ Bye~ Hong~
+        console.log(txt.replace(/Hong/g, 'Lee')); //Hello~ Lee~ Bye~ Lee~
+
+        //6. 공백 제거: trim(), trimLeft(), trimRight()
+        txt = '     하나     둘     셋     ';
+        console.log('@' + txt.trim() + '@');
+        console.log('@' + txt.trimLeft() + '@');
+        console.log('@' + txt.trimRight() + '@');
+
+        //7. 분할: split()
+        txt = '홍길동,아무개,하하하,호호호,후후후';
+        console.log(txt.split(','));
+
+        //8. 검색: startsWith(), endsWith()
+        txt = '홍길동';
+        console.log(txt.startsWith('홍'));  //true
+        console.log(txt.endsWith('동'));    //true
+
+        //9. 기타
+        txt = '1';
+
+        console.log(txt.padStart(3, '0'));  //001
+        console.log(txt.padEnd(3, 'A'));    //1AA
+
+        console.log(txt.repeat(3, txt));    //111
+        
+        //위 코드 사용안하면 아래처럼 반복문 사용해야함
+        var temp = '';
+        for (var i=0; i<3; i++) {
+            temp += txt;
+        }
+
+
+    </script>
+
+</body>
+</html>

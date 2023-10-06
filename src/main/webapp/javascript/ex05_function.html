@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex05_function.html -->
+    <script>
+        /*
+
+            *** JavaScript에서는 자료형을 명시적으로 표현 불가능하다.
+            - number, string, boolean, object
+            - 변수 생성 : int num > number num(x) / var num(o)
+            - 반환값 선언 : 자료형 기재 불가능
+            - 배열 선언 : int[] num > var nums
+
+
+            Java Method
+            public [static] int m1(int num) {
+                return 10;
+            }
+
+            JavaScript Function
+            function m1(num) {
+                return 10;
+            }
+        */
+
+        function m1() {
+            console.log('m1');
+        }
+
+        // 호출
+        m1();
+
+
+        function m2(name) {
+            console.log('name: ' + name);
+
+            // 내장 배열 > 자바스크립트가 스스로 만들어서 제공하는 배열
+            //- arguments
+            //- 함수의 실인자값들을 자동으로 저장하는 내장 배열
+            console.log(arguments[0]);
+            console.log(arguments[1]);
+            console.log(arguments[2]);
+        }
+
+        m2('홍길동');
+        m2('아무개');
+        m2('하하하');
+        m2(); //에러가 뜨지 않고 undefined찍힘 - 사용금지!
+        console.clear(); //콘솔창 클리어하는 명령어
+        m2('홍길동', '아무개', '하하하'); //에러 안뜨지만 홍길동만 뜸, 내장배열로 3개 다 보이게 만들 수 있음 - 사용금지!
+
+
+        function m3(name, age) {
+            console.log(name + ' ' + age);
+            console.log(name, age); //더하기가 아닌 ,로도 가능하며 출력시 띄어쓰기 후 반환
+        }
+
+        m3('홍길동', 20);
+        
+
+        /*
+            JavaScript에서의 값이 없는 상태 표현
+            1. null : 개발자가 의도적으로 비워놓은 상태
+            2. undefined : 변수가 선언된 직후 상태(초기화되기 전)
+        */
+
+        var num1;
+        console.log(num1); //undefined
+        
+        var num2 = null;
+        console.log(num2); //null
+
+        /*
+            JavaScript의 비교형
+
+                1. ==, !=
+                - 자료형의 비교를 하지 않는다.
+                - 값만 비교한다.
+                - JavaScript에서 자주쓰는 비교형 (*)
+
+                2. ===, !==
+                - 진성 비교 연산자
+                - 자료형의 비교를 한다.
+                - 값의 비교를 한다.
+                - Java의 비교형
+        */
+
+        console.log(undefined == null);     //true
+        console.log(undefined === null);    //false
+        
+        console.log(undefined != null);
+        console.log(undefined !== null);
+
+        console.log(10 == '10');    //true
+        console.log(10 === '10');   //false
+
+        
+        function m4() {
+            return 100;
+        }
+
+        console.log(m4()); //100
+
+
+
+    </script>
+</body>
+</html>
