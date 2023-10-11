@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex42_function.html -->
+    <input type="button" value="버튼1" id="btn1">
+    <input type="button" value="버튼2" id="btn2">
+    
+    <script>
+
+        /*
+        
+            JavaScript Function
+            - "함수는 1급 객체이다."
+            - "First Citizen"
+            - 함수를 객체처럼 취급한다. > 함수를 값(데이터)으로 사용할 수 있다.
+
+            1. 함수를 변수나 데이터 구조에 담을 수 있다. (저장)
+            2. 함수를 매개변수를 전달할 수 있다.
+            3. 함수를 반환값으로 사용할 수 있다.
+
+
+            JavaScript에서 함수를 선언하는 방법
+            1. 함수 선언문
+            2. 함수 표현식(리터럴) == 익명 함수
+        
+        */
+
+        //함수 선언문
+        // function m1() {
+        //     alert('m1');
+        // }
+
+        // m1();
+
+
+        //함수 표현식
+        // let f2 = function () {
+        //     alert('익명 함수');
+        // };
+
+        // f2();
+        
+        function m3() {
+            alert('m3');
+        }
+
+        let f3;
+
+        f3 = m3; //함수를 변수에 저장할 수 있다.
+
+        //m3();
+        //f3();
+
+        // function m4() {
+        //     alert('m4');
+        // }
+
+        let f4;
+
+        f4 = function () { //익명 함수
+            alert('m4');
+        };
+
+        //f4();
+        //m4(); //m4 is not defined
+
+
+        document.getElementById('btn1').onmousedown = p1;
+
+        //p1의 생성 이유? > btn1의 클릭 이벤트 전용 함수
+        function p1() {
+            alert('btn1 >' + event.buttons);
+        }
+
+        p1(); // 클릭이 아닌 곳에서 호출?? > 잘못된 사용
+
+    </script>
+
+</body>
+</html>
