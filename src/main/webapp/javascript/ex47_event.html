@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;    
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex47_event.html -->
+    <h1>테이블</h1>
+
+    <!-- table#tbl1>tr*10>td{item}*5 -->
+    <table id="tbl1">
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
+
+    <script>
+
+        //Hover Table
+        //<tr> 이벤트
+        const table = document.getElementById('tbl1');
+
+        //table.tbody.tr들
+        const tr = table.firstElementChild.children; 
+        //console.log(tr);
+
+        for (let i=0; i<tr.length; i++) {
+
+            //이벤트가 발생된 객체(태그)
+            // > 이벤트 발생에 관련 계층 중 최하위 (유턴 객체)
+            // - event.target
+            // - event.srcElement
+
+            tr[i].onmouseover = function() {
+                //event.target.bgColor = 'gold'; /* 이거 사용 */
+                //event.srcElement.bgColor = 'gold';
+                //alert(event.target.nodeName);
+                //event.target.parentElement.bgColor = 'gold';
+                event.currentTarget.bgColor = 'gold'; /* 이거 사용 */
+
+                //tr[i].bgColor = 'gold'; 쓰지 말라
+            };
+
+            tr[i].onmouseout = function() {
+                event.currentTarget.bgColor = 'transparent';
+            }
+        }
+
+    </script>
+
+</body>
+</html>

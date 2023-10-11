@@ -9,6 +9,8 @@
     <!-- ex42_function.html -->
     <input type="button" value="버튼1" id="btn1">
     <input type="button" value="버튼2" id="btn2">
+    <input type="button" value="버튼3" id="btn3">
+    <input type="button" value="버튼4" id="btn4">
     
     <script>
 
@@ -77,8 +79,62 @@
             alert('btn1 >' + event.buttons);
         }
 
-        p1(); // 클릭이 아닌 곳에서 호출?? > 잘못된 사용
+        //p1(); // 클릭이 아닌 곳에서 호출?? > 잘못된 사용
 
+
+        //1. 가독성 향상
+        //2. 가독성 향상 > 다른 용도로 사용하지 않는다.
+        document.getElementById('btn2').onclick = function () {
+            alert('btn2');
+        };
+
+        // document.getElementById('btn2').onclick();
+
+        
+        document.getElementById('btn3').addEventListener('click', p3);
+
+        function p3() {
+            alert();
+        }
+
+        document.getElementById('btn4').addEventListener('click', function() {
+            alert();
+        });
+
+        function m5() {
+            alert('m5');
+        }
+
+        function m6(aaa) {
+            aaa();
+        }
+
+        //m6(m5);
+
+        // m6(function() {
+        //     alert('익명');
+        // });
+
+        function m7() {
+            alert('m7');
+        }
+
+        function m8() {
+            return m7;
+        }
+
+        // let temp = m8();
+        // temp();
+
+        //m8()();
+
+
+        setTimeout(function() {
+            alert();
+        }, 1000);
+
+
+        
     </script>
 
 </body>

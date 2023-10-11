@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+        }
+
+        #tbl1 td img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- ex48_event.html -->
+    <h1>테이블</h1>
+
+    <!-- table#tbl1>tr*3>td*3 -->
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        const list = document.querySelectorAll('#tbl1 td');
+
+        for (let i=0; i<list.length; i++) {
+
+            list[i].onmousedown = function() {
+
+                if (event.buttons == 1) {
+
+                    if (event.target.nodeName == 'TD') {
+                        //빈 <td>
+                            let img = document.createElement('img');
+                            img.setAttribute('src', '../asset/images/rect_icon01.png');
+                            event.target.appendChild(img);
+                    } else { 
+                        //<img>
+                        //기존 이미지 제거
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+
+                            let img = document.createElement('img');
+                            img.setAttribute('src', '../asset/images/rect_icon01.png');
+                            event.currentTarget.appendChild(img);
+                    }
+
+
+                    // console.log(event.target);
+                } else if (event.buttons == 2) {
+
+                    if (event.target.nodeName == 'TD') {
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.target.appendChild(img);
+                    } else {
+                        
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.currentTarget.appendChild(img);
+                    }
+
+                } else if (event.buttons == 4) {
+                    //클릭한 이미지를 삭제
+                    // - 부모태그.removeChild(자식태그)
+                    //event.target.removeChild(event.target.firstElementChild);
+
+                    //event.target.parentElement.removeChild(event.target);
+
+                    event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+                }
+
+            };
+
+        }
+
+        //오른쪽 창 없애기 body에 쓰지 말고 자바스크립트에서 사용하기
+        window.oncontextmenu = function() {
+            return false;
+        };
+
+    </script>
+
+</body>
+</html>

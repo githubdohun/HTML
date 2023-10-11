@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px;
+            height: 126px;
+            /* font-size: 0; */
+        }
+
+        #tbl1 td img {
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <table id ="tbl1">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    const list = document.querySelectorAll('#tbl1 td');
+
+    for(let i=0; i<list.length; i++){
+        
+        list[i].onmouseenter = function(){
+        
+            //보조키의 눌림상태
+            // console.log(event.ctrlKey);
+            // console.log(event.shiftKey);
+            //console.log(event.altKey)
+            
+            if(event.currentTarget.children.length == 0){
+            // event.target.bgColor = 'gold';
+            const img = document.createElement('img');
+
+            if (event.ctrlKey) {
+            img.setAttribute('src','../asset/images/rect_icon05.png');
+        } else {
+            img.setAttribute('src','../asset/images/rect_icon06.png');
+        }
+            
+            event.currentTarget.appendChild(img);
+            }
+        };
+
+        // list[i].onmouseleave = function(){
+        //     //event.target.bgColor = 'transparent'
+        //     event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+        // };
+    }
+</script>
+
+
+
+</body>
+</html>
