@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ex41_object.html -->
+
+    <script>
+
+        /* 
+         
+            객체, Object
+            - JavaScript에는 클래스가 없다. 하지만 내장 객체를 제공한다.
+
+            1. 내장 객체
+            - Array, Date, Math, Object 등
+            - new Array()
+            - new Date()
+            - Math.메소드()
+
+            2. BOM 객체
+            - window, document, form, text, button 등
+
+            3. DOM 객체
+            - element, attribute, text, comment 등
+
+            4. 사용자 정의 객체
+            - JavaScript에는 클래스가 없다. > 원하는 형태의 객체 생성 불가능 > 원하는 형태의 객체를 만들 수 있다.
+
+            const list1 = new Array();
+            const list2 = [];
+
+
+            사용자 정의 객체
+            1. Object 내장 객체를 사용
+                - const obj1 = new Object();
+            2. {} > 객체 리터럴 표기법을 사용
+                - const obj2 = {};
+
+            
+            class User {
+                public String name;
+                public int age;
+                public String address;
+
+            }
+
+            User hong = new User();
+
+            hong.name = "홍길동";
+            hong.age = 20;
+            hong.address = "서울시 강남구";        
+        
+        */
+
+        const hong = new Object();
+
+        //** JavaScript의 모든 객체는 프로퍼티를 자유롭게 추가/삭제가 가능하다.
+        hong.name = '홍길동'; //객체의 프로퍼티(Property)
+
+        console.log(hong.name);
+        console.log(hong);
+
+        hong.age = 20;
+        hong.address = '서울시 강남구';
+
+        console.log(hong); //{name: '홍길동', age: 20, address: '서울시 강남구'}
+
+    </script>
+</body>
+</html>
