@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #menu {
+            display: flex; /* 여분 없애기 */
+            width: 630px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform: translate(0px, -100px);
+        }
+
+        #menu img {
+            transition: all .5s;
+        }
+        
+        /* #menu img:hover {
+            transform: translate(0px, 90px);
+        } */
+        
+    </style>
+</head>
+<body>
+    <!-- ex60_css.html -->
+    <nav id="menu">
+        <img src="../asset/images/rect_icon01.png">
+        <img src="../asset/images/rect_icon02.png">
+        <img src="../asset/images/rect_icon03.png">
+        <img src="../asset/images/rect_icon04.png">
+        <img src="../asset/images/rect_icon05.png">
+    </nav>
+</body>
+</html>
