@@ -8,65 +8,61 @@
         .box {
             width: 150px;
             height: 150px;
-            background-color: gold;
+            background-color: slategray;
             border: 1px solid black;
+            
         }
     </style>
 </head>
 <body>
-    <!-- ex54_css.html -->
-
+    <!-- ex58_css.html -->
+    
     <div id="box1" class="box"></div>
-    
-    
+
     <script>
-
-        const box1 = document.getElementById('box1' && isValid(event));
+        
+        const box1 = document.getElementById('box1');
         let isDown = false;
-        
 
-        //Drag & Drop > 개체 이동 인터페이스
-    window.onmousedown = function() {
+        window.onmousedown = function() {
+            
+            if (event.target.id == 'box1' && isValid(event)) {
+                isDown = true;
+                box1.style.opacity = 1;
+            }
+        };
 
-        if (event.target.id == 'box1'  && isValid(event)) {
-            isDown = true;
-            box1.style.opacity = 3;
+        function isValid(event) {
+
+            //마우스가 상자의 우측 하단부를 눌렀는지 확인?
+
+            //현재 상자의 크기?
+            let w = parseInt(window.getComputedStyle(box1).width);
+            let h = parseInt(window.getComputedStyle(box1).height);
+
+            if (event.offsetX >= (w - 10) && event.offsetX <= w
+                && event.offsetY >= (h - 10) && event.offsetY <= h) {
+                    return true;
+            }
+
+            return false;
+
         }
-    };
-
-    function isValid(event) {
-        //마우스가 상자의 우측 하단부를 눌렀는지?
         
-        //현재 상자의 크기?
-        let w = parseInt(window.getComputedStyle(box1).width);
-        let h = parseInt(window.getComputedStyle(box1).height);
-
-        if (event.offsetX >= (w - 10)
-            && event.offsetX <= w
-            && event.offsetY >= (h - 10)
-            && event.offsetY <= h) {
-                return true;
-        }
-
-        return false;
-
-    };
-
-    window.onmousemove = function() {
+        window.onmousemove = function() {
+            
+            if (isDown) {
+                box1.style.width = event.clientX + 'px';
+                box1.style.height = event.clientY + 'px';
+            }
+            
+        };
         
+        window.onmouseup = function() {
+            isDown = false;
+        };
 
-        if (isDown) {
-        box1.style.width = event.clientX + 'px';
-        box1.style.height = event.clientY + 'px';
-        }
-    };
-
-    window.onmouseup = function() {
-        isDown = false;
-        box1.style.opacity = 1;
-    };
 
     </script>
-
 </body>
 </html>
